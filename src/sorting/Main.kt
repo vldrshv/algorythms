@@ -1,4 +1,4 @@
-import java.util.*
+package sorting
 
 fun main(args: Array<String>) {
     val ARR_SIZE = 1_000_000
@@ -7,9 +7,9 @@ fun main(args: Array<String>) {
     val toFind: Int = -6
     var valueToCheck: Int = -22
 
-    print("\nfind($toFind).position: ${arr.find(toFind)}")
-    print("\ncontains(valueToCheck): ${arr.contains(valueToCheck)}")
-    print("\nbinaryFind($toFind).position: ${arr.binaryFind(toFind)}\n")
+    print("\nsorting.find($toFind).position: ${arr.find(toFind)}")
+    print("\nsorting.contains(valueToCheck): ${arr.contains(valueToCheck)}")
+    print("\nsorting.binaryFind($toFind).position: ${arr.binaryFind(toFind)}\n")
 
     var startTime: Long = 0
     var endTime: Long = 0
@@ -17,20 +17,20 @@ fun main(args: Array<String>) {
     startTime = System.currentTimeMillis()
     arr.bubbleSort()
     endTime = System.currentTimeMillis()
-    println("bubbleSort time: ${endTime - startTime} ${arr.isSorted()}")
+    println("sorting.bubbleSort time: ${endTime - startTime} ${arr.isSorted()}")
 
-    arr = initArray (ARR_SIZE){ it -> it * -2 }
+    arr = initArray(ARR_SIZE) { it -> it * -2 }
     startTime = System.currentTimeMillis()
     arr.selectionSort()
     endTime = System.currentTimeMillis()
-    println("selectionSort time: ${endTime - startTime} ${arr.isSorted()}")
+    println("sorting.selectionSort time: ${endTime - startTime} ${arr.isSorted()}")
 
 
-    arr = initArray (ARR_SIZE){ it -> it * -2 }
+    arr = initArray(ARR_SIZE) { it -> it * -2 }
     startTime = System.currentTimeMillis()
     arr.insertionSort()
     endTime = System.currentTimeMillis()
-    println("insertionSort time: ${endTime - startTime} ${arr.isSorted()}")
+    println("sorting.insertionSort time: ${endTime - startTime} ${arr.isSorted()}")
 }
 
 public fun initArray(size: Int = 0, howInit: (Int) -> Int = { it -> it }): Array<Int> {
